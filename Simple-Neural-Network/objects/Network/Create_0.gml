@@ -3,11 +3,11 @@ update = false;
 yoffset = 32;
 xoffset = 80;
 
-InputLayerSize = 9;
-Hidden1LayerSize = 10;
-Hidden2LayerSize = 10;
-Hidden3LayerSize = 10;
-OutputLayerSize = 4;
+InputLayerSize = global.InputSize;
+Hidden1LayerSize = global.Hidden1Size;
+Hidden2LayerSize = global.Hidden2Size;
+Hidden3LayerSize = global.Hidden3Size;
+OutputLayerSize = global.OutputSize;
 
 InputLayer = ds_list_create();
 Hidden1Layer = ds_list_create();

@@ -1,5 +1,5 @@
 if(update) {
 	MasterController.Alive--;
-	sprite_index = sprAgentDead;
+	touchedGoal = true;
 	update = false;
 }

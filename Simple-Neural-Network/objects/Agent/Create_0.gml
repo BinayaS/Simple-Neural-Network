@@ -4,12 +4,17 @@ startDist = distance_to_object(Goal);
 
 startX = x;
 startY = y;
+reset = false;
 
 walkspd = 6;
 lookDistance = 200;
 global.offNumber = -5;
 division = 12;
 setBack = 6;
+
+fitness = 0;
+touchedGoal = false;
+timer = 0;
 
 up = 0;
 down = 0;

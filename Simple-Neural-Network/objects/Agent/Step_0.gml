@@ -1,5 +1,13 @@
 network.update = update;
 
+if(reset) {
+	update = true;
+	sprite_index = sprAgent;
+	x = startX;
+	y = startY;
+	reset = false;
+}
+
 if(update) {
 	
 	//Get inputs
@@ -13,6 +21,7 @@ if(update) {
 	//Move self
 	x += yMove;
 	y += xMove;
+	timer++;
 
 	var dist = distance_to_object(Goal);
 	if(dist == 0) {
@@ -90,5 +99,16 @@ if(update) {
 	checkGoalDistance = ((startDist-dist)/(startDist/division))-setBack;
 
 #endregion
+
+	//Update fitness fuction
+	if(touchedGoal) {
+		fitness = (((1/(timer*timer))*1000000000)*startDist*100)*2;
+	} else {
+		if(collision_line(x, y, Goal.x, Goal.y, Solid, true, true) == noone) {
+			fitness = ((1/(dist*dist))*100000000000)*2;
+		} else {
+			fitness = ((1/(dist*dist))*1000000000);
+		}
+	}
 
 }
