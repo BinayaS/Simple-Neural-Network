@@ -47,6 +47,30 @@
             }
         },
         {
+            "Key": "307142f9-8c36-4b60-8d62-2fb34aadf4c5",
+            "Value": {
+                "id": "a4c0db7c-bf7d-4116-8736-5fcb58404c43",
+                "resourcePath": "objects\\Network\\Network.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "45f08237-1bc9-4362-9637-2c71aa39483a",
+            "Value": {
+                "id": "41e56084-9180-4d6b-88d1-c81e9c12f09f",
+                "resourcePath": "objects\\Agent\\Agent.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "4aaaf705-da80-407c-9a32-d8b162af0e54",
+            "Value": {
+                "id": "9474ac46-49c4-4c67-8451-9174e777416e",
+                "resourcePath": "objects\\Solid\\Solid.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "4ec9c4bc-52d1-48be-98fe-1ecc5ad115b5",
             "Value": {
                 "id": "10d6d82a-84c4-41de-b725-41f88a27ad90",
@@ -55,11 +79,35 @@
             }
         },
         {
+            "Key": "64eab616-35c1-4911-9f16-88078dfede58",
+            "Value": {
+                "id": "c653abd3-4668-4da5-af50-c1cea33ac846",
+                "resourcePath": "sprites\\sprNeuron\\sprNeuron.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "70ad62a1-2c67-4d11-8b50-48a6b06dca92",
             "Value": {
                 "id": "d9eed08a-102e-493a-bc03-fdd9d9e91480",
                 "resourcePath": "views\\70ad62a1-2c67-4d11-8b50-48a6b06dca92.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "71588b76-451b-4e9d-b877-2ee6e9128645",
+            "Value": {
+                "id": "6840a06f-3b9b-4bf8-85bb-d02b6eb616d1",
+                "resourcePath": "sprites\\sprSolid\\sprSolid.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "74cf0365-dcbc-4389-87d3-d44f7f0e01f4",
+            "Value": {
+                "id": "45b61af0-029f-4193-9cea-7ea791044ffe",
+                "resourcePath": "sprites\\sprMasterController\\sprMasterController.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -95,6 +143,22 @@
             }
         },
         {
+            "Key": "90205f84-acd4-49a2-b4c0-ee1fe6c14e0d",
+            "Value": {
+                "id": "383abaaf-35d6-4108-abfe-3ae9bcb2a572",
+                "resourcePath": "objects\\MasterController\\MasterController.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "91dcf76f-faec-4c04-aff7-37fe983023c8",
+            "Value": {
+                "id": "4018a7da-54ac-4481-9657-5b946457a04a",
+                "resourcePath": "sprites\\sprAgentDead\\sprAgentDead.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "93566aad-c3b3-48a9-8fa7-9c5ee19f74ac",
             "Value": {
                 "id": "7d630018-0526-4e46-ba1e-f777f2f8ea03",
@@ -119,11 +183,27 @@
             }
         },
         {
+            "Key": "9deeff4c-5455-4f1a-b445-4b0627ca4e69",
+            "Value": {
+                "id": "f39d6ee5-4a6b-4eb4-8321-e33a243f3d2a",
+                "resourcePath": "sprites\\sprAgent\\sprAgent.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "a128950b-5063-4876-b4a6-b99dbd2ea6d1",
             "Value": {
                 "id": "8921b15a-b257-4b92-ac46-7c168e68dce6",
                 "resourcePath": "options\\amazonfire\\options_amazonfire.yy",
                 "resourceType": "GMAmazonFireOptions"
+            }
+        },
+        {
+            "Key": "a77b5ef1-98c2-4b49-a2ce-62cad83d32aa",
+            "Value": {
+                "id": "afae929c-71d0-48e7-95cd-750542f37409",
+                "resourcePath": "objects\\Camera\\Camera.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -148,6 +228,14 @@
                 "id": "7acf7571-ad09-4074-a7f4-1c42b5173cc0",
                 "resourcePath": "views\\ab7164c1-b2df-46e1-b643-34df24ed2087.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "ad43e3a6-4e4e-488c-85d8-cec81c53c127",
+            "Value": {
+                "id": "7000106b-76ab-4be5-bcd3-71a1ee43067c",
+                "resourcePath": "objects\\Neuron\\Neuron.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -183,11 +271,27 @@
             }
         },
         {
+            "Key": "dfec61f5-65da-45a9-9b7d-557f14d8bffb",
+            "Value": {
+                "id": "9071df86-c103-4669-a125-4cfef88490f2",
+                "resourcePath": "objects\\Goal\\Goal.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "e42bf5cc-3f46-4d67-a6d0-a4885a11ac3f",
             "Value": {
                 "id": "37dddd8f-1ae1-4adb-b5ed-e257fe41dfc4",
                 "resourcePath": "options\\android\\options_android.yy",
                 "resourceType": "GMAndroidOptions"
+            }
+        },
+        {
+            "Key": "e5fbf2c9-3810-4b09-8235-2a4a706e005d",
+            "Value": {
+                "id": "fbab8827-d5a8-4580-8043-e6edf2411f8e",
+                "resourcePath": "sprites\\sprNeuronOutline\\sprNeuronOutline.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -212,6 +316,14 @@
                 "id": "d087c625-e481-4b9c-b949-dece1167f617",
                 "resourcePath": "views\\f8658f32-11a5-439a-bfb6-10e0b5a0eb8b.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "fa0cec7c-8827-4978-8fa7-3802ad25fd9a",
+            "Value": {
+                "id": "d92325f6-7c2f-479c-967b-a20edec94e13",
+                "resourcePath": "sprites\\sprGoal\\sprGoal.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
