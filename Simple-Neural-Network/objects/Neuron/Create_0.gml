@@ -1,5 +1,5 @@
-Inputs = ds_list_create();
-Weights = ds_list_create();
+Inputs = [];
+Weights = [];
 Bias = 1;
 
 Output = 0;

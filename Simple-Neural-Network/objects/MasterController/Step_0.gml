@@ -77,11 +77,11 @@ if(Timer == 0) {
 				file_text_writeln(global.biasFile);
 			
 				for(var j = 0; j < global.InputSize; j++) {
-					var _inputLayer = ds_list_find_value(_agent.network.InputLayer, j);
+					var _inputLayer = _agent.network.InputLayer[j];
 				
 					var _weightsString = "";
-					for(var k = 0; k < ds_list_size(_inputLayer.Weights); k++) {
-						_weightsString += string(ds_list_find_value(_inputLayer.Weights, k)) + ", ";
+					for(var k = 0; k < array_length_1d(_inputLayer.Weights); k++) {
+						_weightsString += string(_inputLayer.Weights[k]) + ", ";
 					}
 				
 					file_text_write_string(global.weightsFile, "Agent: " + string(i) + " : " + _weightsString);
@@ -97,11 +97,11 @@ if(Timer == 0) {
 				file_text_write_string(global.biasFile, "---Hidden1Layer---");
 				file_text_writeln(global.biasFile);
 				for(var j = 0; j < global.Hidden1Size; j++) {
-					var _hidden1Layer = ds_list_find_value(_agent.network.Hidden1Layer, j);
+					var _hidden1Layer = _agent.network.Hidden1Layer[j];
 				
 					var _weightsString = "";
-					for(var k = 0; k < ds_list_size(_hidden1Layer.Weights); k++) {
-						_weightsString += string(ds_list_find_value(_hidden1Layer.Weights, k)) + ", ";
+					for(var k = 0; k < array_length_1d(_hidden1Layer.Weights); k++) {
+						_weightsString += string(_hidden1Layer.Weights[k]) + ", ";
 					}
 				
 					file_text_write_string(global.weightsFile, "Agent: " + string(i) + " : " + _weightsString);
@@ -117,11 +117,11 @@ if(Timer == 0) {
 				file_text_write_string(global.biasFile, "---Hidden2Layer---");
 				file_text_writeln(global.biasFile);
 				for(var j = 0; j < global.Hidden2Size; j++) {
-					var _hidden2Layer = ds_list_find_value(_agent.network.Hidden2Layer, j);
+					var _hidden2Layer = _agent.network.Hidden2Layer[j];
 				
 					var _weightsString = "";
-					for(var k = 0; k < ds_list_size(_hidden2Layer.Weights); k++) {
-						_weightsString += string(ds_list_find_value(_hidden2Layer.Weights, k)) + ", ";
+					for(var k = 0; k < array_length_1d(_hidden2Layer.Weights); k++) {
+						_weightsString += string(_hidden2Layer.Weights[k]) + ", ";
 					}
 				
 					file_text_write_string(global.weightsFile, "Agent: " + string(i) + " : " + _weightsString);
@@ -137,11 +137,11 @@ if(Timer == 0) {
 				file_text_write_string(global.biasFile, "---Hidden3Layer---");
 				file_text_writeln(global.biasFile);
 				for(var j = 0; j < global.Hidden3Size; j++) {
-					var _hidden3Layer = ds_list_find_value(_agent.network.Hidden3Layer, j);
+					var _hidden3Layer = _agent.network.Hidden3Layer[j];
 				
 					var _weightsString = "";
-					for(var k = 0; k < ds_list_size(_hidden3Layer.Weights); k++) {
-						_weightsString += string(ds_list_find_value(_hidden3Layer.Weights, k)) + ", ";
+					for(var k = 0; k < array_length_1d(_hidden3Layer.Weights); k++) {
+						_weightsString += string(_hidden3Layer.Weights[k]) + ", ";
 					}
 				
 					file_text_write_string(global.weightsFile, "Agent: " + string(i) + " : " + _weightsString);
@@ -157,11 +157,11 @@ if(Timer == 0) {
 				file_text_write_string(global.biasFile, "---OutputLayer---");
 				file_text_writeln(global.biasFile);
 				for(var j = 0; j < global.OutputSize; j++) {
-					var _outputLayer = ds_list_find_value(_agent.network.OutputLayer, j);
+					var _outputLayer = _agent.network.OutputLayer[j];
 				
 					var _weightsString = "";
-					for(var k = 0; k < ds_list_size(_outputLayer.Weights); k++) {
-						_weightsString += string(ds_list_find_value(_outputLayer.Weights, k)) + ", ";
+					for(var k = 0; k < array_length_1d(_outputLayer.Weights); k++) {
+						_weightsString += string(_outputLayer.Weights[k]) + ", ";
 					}
 				
 					file_text_write_string(global.weightsFile, "Agent: " + string(i) + " : " + _weightsString);
@@ -245,28 +245,28 @@ if(Timer == 0) {
 		for(var k = 0; k < global.Hidden1Size; k++) {
 			for(var j = 0; j < global.InputSize; j++) {
 				//show_message(string(k) + " " + string(ds_list_find_value(_newAgent.network.Hidden1Layer, k)));
-				var _newAgentNeuron = ds_list_find_value(_newAgent.network.Hidden1Layer, k);
+				var _newAgentNeuron = _newAgent.network.Hidden1Layer[k];
 			
-				var _topAgent0Neuron = ds_list_find_value(topAgent0.network.Hidden1Layer, k);
-				var _topAgent0Weights = ds_list_find_value(_topAgent0Neuron.Weights, j);
+				var _topAgent0Neuron = topAgent0.network.Hidden1Layer[k];
+				var _topAgent0Weights = _topAgent0Neuron.Weights[j];
 			
-				var _topAgent1Neuron = ds_list_find_value(topAgent1.network.Hidden1Layer, k);
-				var _topAgent1Weights = ds_list_find_value(_topAgent1Neuron.Weights, j);
+				var _topAgent1Neuron = topAgent1.network.Hidden1Layer[k];
+				var _topAgent1Weights = _topAgent1Neuron.Weights[j];
 			
 				var _rand = random_range(0, 100);
 			
 				if(_rand > 50) {
-					ds_list_replace(_newAgentNeuron.Weights, j, _topAgent0Weights);
+					_newAgentNeuron.Weights[j] = _topAgent0Weights;
 					var _mutate = random_range(0, 1);
 					if(_mutate < 0.1) {
-						ds_list_replace(_newAgentNeuron.Weights, j, random_range(-4, 4));
+						_newAgentNeuron.Weights[j] = random_range(-4, 4);
 					}
 					//_newAgentNeuron.Bias = _topAgent0Neuron.Bias;
 				} else {
-					ds_list_replace(_newAgentNeuron.Weights, j, _topAgent1Weights);
+					_newAgentNeuron.Weights[j] = _topAgent1Weights;
 					var _mutate = random_range(0, 1);
 					if(_mutate < 0.1) {
-						ds_list_replace(_newAgentNeuron.Weights, j, random_range(-4, 4));
+						_newAgentNeuron.Weights[j] = random_range(-4, 4);
 					}
 					//_newAgentNeuron.Bias = _topAgent1Neuron.Bias;
 				}
@@ -277,28 +277,28 @@ if(Timer == 0) {
 		//Hidden2 layer
 		for(var k = 0; k < global.Hidden2Size; k++) {
 			for(var j = 0; j < global.Hidden1Size; j++) {
-				var _newAgentNeuron = ds_list_find_value(_newAgent.network.Hidden2Layer, k);
+				var _newAgentNeuron = _newAgent.network.Hidden2Layer[k];
 			
-				var _topAgent0Neuron = ds_list_find_value(topAgent0.network.Hidden2Layer, k);
-				var _topAgent0Weights = ds_list_find_value(_topAgent0Neuron.Weights, j);
+				var _topAgent0Neuron = topAgent0.network.Hidden2Layer[k];
+				var _topAgent0Weights = _topAgent0Neuron.Weights[j];
 			
-				var _topAgent1Neuron = ds_list_find_value(topAgent1.network.Hidden2Layer, k);
-				var _topAgent1Weights = ds_list_find_value(_topAgent1Neuron.Weights, j);
+				var _topAgent1Neuron = topAgent1.network.Hidden2Layer[k];
+				var _topAgent1Weights = _topAgent1Neuron.Weights[j];
 			
 				var _rand = random_range(0, 100);
 			
 				if(_rand > 50) {
-					ds_list_replace(_newAgentNeuron.Weights, j, _topAgent0Weights);
+					_newAgentNeuron.Weights[j] = _topAgent0Weights;
 					var _mutate = random_range(0, 1);
 					if(_mutate < 0.1) {
-						ds_list_replace(_newAgentNeuron.Weights, j, random_range(-4, 4));
+						_newAgentNeuron.Weights[j] = random_range(-4, 4);
 					}
 					//_newAgentNeuron.Bias = _topAgent0Neuron.Bias;
 				} else {
-					ds_list_replace(_newAgentNeuron.Weights, j, _topAgent1Weights);
+					_newAgentNeuron.Weights[j] = _topAgent1Weights;
 					var _mutate = random_range(0, 1);
 					if(_mutate < 0.1) {
-						ds_list_replace(_newAgentNeuron.Weights, j, random_range(-4, 4));
+						_newAgentNeuron.Weights[j] = random_range(-4, 4);
 					}
 					//_newAgentNeuron.Bias = _topAgent1Neuron.Bias;
 				}
@@ -309,28 +309,28 @@ if(Timer == 0) {
 		//Hidden3 layer
 		for(var k = 0; k < global.Hidden3Size; k++) {
 			for(var j = 0; j < global.Hidden2Size; j++) {
-				var _newAgentNeuron = ds_list_find_value(_newAgent.network.Hidden3Layer, k);
+				var _newAgentNeuron = _newAgent.network.Hidden3Layer[k];
 			
-				var _topAgent0Neuron = ds_list_find_value(topAgent0.network.Hidden3Layer, k);
-				var _topAgent0Weights = ds_list_find_value(_topAgent0Neuron.Weights, j);
+				var _topAgent0Neuron = topAgent0.network.Hidden3Layer[k];
+				var _topAgent0Weights = _topAgent0Neuron.Weights[j];
 			
-				var _topAgent1Neuron = ds_list_find_value(topAgent1.network.Hidden3Layer, k);
-				var _topAgent1Weights = ds_list_find_value(_topAgent1Neuron.Weights, j);
+				var _topAgent1Neuron = topAgent1.network.Hidden3Layer[k];
+				var _topAgent1Weights = _topAgent1Neuron.Weights[j];
 			
 				var _rand = random_range(0, 100);
 			
 				if(_rand > 50) {
-					ds_list_replace(_newAgentNeuron.Weights, j, _topAgent0Weights);
+					_newAgentNeuron.Weights[j] = _topAgent0Weights;
 					var _mutate = random_range(0, 1);
 					if(_mutate < 0.1) {
-						ds_list_replace(_newAgentNeuron.Weights, j, random_range(-4, 4));
+						_newAgentNeuron.Weights[j] = random_range(-4, 4);
 					}
 					//_newAgentNeuron.Bias = _topAgent0Neuron.Bias;
 				} else {
-					ds_list_replace(_newAgentNeuron.Weights, j, _topAgent1Weights);
+					_newAgentNeuron.Weights[j] = _topAgent1Weights;
 					var _mutate = random_range(0, 1);
 					if(_mutate < 0.1) {
-						ds_list_replace(_newAgentNeuron.Weights, j, random_range(-4, 4));
+						_newAgentNeuron.Weights[j] = random_range(-4, 4);
 					}
 					//_newAgentNeuron.Bias = _topAgent1Neuron.Bias;
 				}
@@ -341,28 +341,28 @@ if(Timer == 0) {
 		//Output layer
 		for(var k = 0; k < global.OutputSize; k++) {
 			for(var j = 0; j < global.Hidden3Size; j++) {
-				var _newAgentNeuron = ds_list_find_value(_newAgent.network.OutputLayer, k);
+				var _newAgentNeuron = _newAgent.network.OutputLayer[k];
 			
-				var _topAgent0Neuron = ds_list_find_value(topAgent0.network.OutputLayer, k);
-				var _topAgent0Weights = ds_list_find_value(_topAgent0Neuron.Weights, j);
+				var _topAgent0Neuron = topAgent0.network.OutputLayer[k];
+				var _topAgent0Weights = _topAgent0Neuron.Weights[j];
 			
-				var _topAgent1Neuron = ds_list_find_value(topAgent1.network.OutputLayer, k);
-				var _topAgent1Weights = ds_list_find_value(_topAgent1Neuron.Weights, j);
+				var _topAgent1Neuron = topAgent1.network.OutputLayer[k];
+				var _topAgent1Weights = _topAgent1Neuron.Weights[j];
 			
 				var _rand = random_range(0, 100);
 			
 				if(_rand > 50) {
-					ds_list_replace(_newAgentNeuron.Weights, j, _topAgent0Weights);
+					_newAgentNeuron.Weights[j] = _topAgent0Weights;
 					var _mutate = random_range(0, 1);
 					if(_mutate < 0.1) {
-						ds_list_replace(_newAgentNeuron.Weights, j, random_range(-4, 4));
+						_newAgentNeuron.Weights[j] = random_range(-4, 4);
 					}
 					//_newAgentNeuron.Bias = _topAgent0Neuron.Bias;
 				} else {
-					ds_list_replace(_newAgentNeuron.Weights, j, _topAgent1Weights);
+					_newAgentNeuron.Weights[j] = _topAgent1Weights;
 					var _mutate = random_range(0, 1);
 					if(_mutate < 0.1) {
-						ds_list_replace(_newAgentNeuron.Weights, j, random_range(-4, 4));
+						_newAgentNeuron.Weights[j] = random_range(-4, 4);
 					}
 					//_newAgentNeuron.Bias = _topAgent1Neuron.Bias;
 				}
@@ -388,33 +388,33 @@ if(Timer == 0) {
 	
 	//Hidden1 layer
 	for(var k = 0; k < global.Hidden1Size; k++) {
-		var _lastGenNeuron = ds_list_find_value(_lastGenAgent.network.Hidden1Layer, k);
-		var _newAgentNeuron = ds_list_find_value(_newAgent.network.Hidden1Layer, k);
-		ds_list_copy(_newAgentNeuron.Weights, _lastGenNeuron.Weights);
+		var _lastGenNeuron = _lastGenAgent.network.Hidden1Layer[k];
+		var _newAgentNeuron = _newAgent.network.Hidden1Layer[k];
+		array_copy(_newAgentNeuron.Weights, 0, _lastGenNeuron.Weights, 0, array_length_1d(_lastGenNeuron.Weights));
 		_newAgentNeuron.Bias = _lastGenNeuron.Bias;
 	}
 		
 	//Hidden2 layer
 	for(var k = 0; k < global.Hidden2Size; k++) {
-		var _lastGenNeuron = ds_list_find_value(_lastGenAgent.network.Hidden2Layer, k);
-		var _newAgentNeuron = ds_list_find_value(_newAgent.network.Hidden2Layer, k);
-		ds_list_copy(_newAgentNeuron.Weights, _lastGenNeuron.Weights);
+		var _lastGenNeuron = _lastGenAgent.network.Hidden2Layer[k];
+		var _newAgentNeuron = _newAgent.network.Hidden2Layer[k];
+		array_copy(_newAgentNeuron.Weights, 0, _lastGenNeuron.Weights, 0, array_length_1d(_lastGenNeuron.Weights));
 		_newAgentNeuron.Bias = _lastGenNeuron.Bias;
 	}
 		
 	//Hidden3 layer
 	for(var k = 0; k < global.Hidden3Size; k++) {
-		var _lastGenNeuron = ds_list_find_value(_lastGenAgent.network.Hidden3Layer, k);
-		var _newAgentNeuron = ds_list_find_value(_newAgent.network.Hidden3Layer, k);
-		ds_list_copy(_newAgentNeuron.Weights, _lastGenNeuron.Weights);
+		var _lastGenNeuron = _lastGenAgent.network.Hidden3Layer[k];
+		var _newAgentNeuron = _newAgent.network.Hidden3Layer[k];
+		array_copy(_newAgentNeuron.Weights, 0, _lastGenNeuron.Weights, 0, array_length_1d(_lastGenNeuron.Weights));
 		_newAgentNeuron.Bias = _lastGenNeuron.Bias;
 	}
 		
 	//Output layer
 	for(var k = 0; k < global.OutputSize; k++) {
-		var _lastGenNeuron = ds_list_find_value(_lastGenAgent.network.OutputLayer, k);
-		var _newAgentNeuron = ds_list_find_value(_newAgent.network.OutputLayer, k);
-		ds_list_copy(_newAgentNeuron.Weights, _lastGenNeuron.Weights);
+		var _lastGenNeuron = _lastGenAgent.network.OutputLayer[k];
+		var _newAgentNeuron = _newAgent.network.OutputLayer[k];
+		array_copy(_newAgentNeuron.Weights, 0, _lastGenNeuron.Weights, 0, array_length_1d(_lastGenNeuron.Weights));
 		_newAgentNeuron.Bias = _lastGenNeuron.Bias;
 	}
 	

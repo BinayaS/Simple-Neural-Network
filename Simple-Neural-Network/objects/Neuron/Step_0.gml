@@ -2,9 +2,9 @@ if(update) {
 	Output = 0;
 	
 	//Update output value
-	for(var i = 0; i < ds_list_size(Inputs); i++) {
-		var _neuron = ds_list_find_value(Inputs, i);
-		Output += _neuron.Output * ds_list_find_value(Weights, i);
+	for(var i = 0; i < array_length_1d(Inputs); i++) {
+		var _neuron = Inputs[i];
+		Output += _neuron.Output * Weights[i];
 	}
 
 	//Add our bias

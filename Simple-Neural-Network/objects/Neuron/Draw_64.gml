@@ -1,10 +1,12 @@
 if(showSelf) {
 	if(!updateInput) {
 		var i = 0;
-		repeat(ds_list_size(Inputs)) {
-			var _InputNeuron = ds_list_find_value(Inputs, i);
+		repeat(array_length_1d(Inputs)) {
 			var _color = c_green;
-			var _weight = ds_list_find_value(Weights, i);
+			
+			var _InputNeuron = Inputs[i];
+			var _weight = Weights[i];
+			
 			draw_set_alpha(abs(_weight));
 			if(_weight < 0) {
 				_color = c_red;
