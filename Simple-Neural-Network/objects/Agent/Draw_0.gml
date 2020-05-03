@@ -9,4 +9,10 @@ if(showLines) {
 	draw_line(x, y, x+lookDistance, y-lookDistance);
 	draw_line(x, y, x+lookDistance, y+lookDistance);
 }
-draw_self();
+if(topAgent) {
+	draw_sprite(sprAgentTop, 0, x, y);
+	network.showNetwork = true;
+} else {
+	draw_self();	
+}
+draw_text(x, y, fitness);

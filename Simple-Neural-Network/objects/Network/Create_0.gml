@@ -2,6 +2,8 @@ owner = noone;
 update = false;
 yoffset = 32;
 xoffset = 80;
+moveThreshold = 0.1;
+showNetwork = false;
 
 InputLayerSize = global.InputSize;
 Hidden1LayerSize = global.Hidden1Size;
@@ -21,8 +23,14 @@ OutputLayer = ds_list_create();
 var i = 0;
 repeat(InputLayerSize) {
 	var _newNeuron = instance_create_depth(x, y+yoffset*i+16, 0, Neuron);
-	_newNeuron.alarm[1] = 2;
-	_newNeuron.inputSize = 1;
+	
+	repeat(1) {
+		ds_list_add(_newNeuron.Weights, random_range(-4, 4));
+	}
+	
+	_newNeuron.Bias = random_range(-1, 1);
+	_newNeuron.updateInput = true;
+	
 	ds_list_add(InputLayer, _newNeuron);
 	i++;
 }
@@ -31,8 +39,14 @@ repeat(InputLayerSize) {
 var i = 0;
 repeat(Hidden1LayerSize) {
 	var _newNeuron = instance_create_depth(x+xoffset, y+yoffset*i, 0, Neuron);
-	_newNeuron.alarm[0] = 2;
-	_newNeuron.inputSize = InputLayerSize;
+	
+	repeat(InputLayerSize) {
+		ds_list_add(_newNeuron.Weights, random_range(-4, 4));
+	}
+	
+	_newNeuron.Bias = random_range(-1, 1);
+	_newNeuron.update = true;
+	
 	ds_list_add(Hidden1Layer, _newNeuron);
 	i++;
 }
@@ -41,8 +55,14 @@ repeat(Hidden1LayerSize) {
 var i = 0;
 repeat(Hidden2LayerSize) {
 	var _newNeuron = instance_create_depth(x+xoffset*2, y+yoffset*i, 0, Neuron);
-	_newNeuron.alarm[0] = 2;
-	_newNeuron.inputSize = Hidden1LayerSize;
+	
+	repeat(Hidden1LayerSize) {
+		ds_list_add(_newNeuron.Weights, random_range(-4, 4));
+	}
+	
+	_newNeuron.Bias = random_range(-1, 1);
+	_newNeuron.update = true;
+	
 	ds_list_add(Hidden2Layer, _newNeuron);
 	i++;
 }
@@ -51,8 +71,14 @@ repeat(Hidden2LayerSize) {
 var i = 0;
 repeat(Hidden3LayerSize) {
 	var _newNeuron = instance_create_depth(x+xoffset*3, y+yoffset*i, 0, Neuron);
-	_newNeuron.alarm[0] = 2;
-	_newNeuron.inputSize = Hidden2LayerSize;
+
+	repeat(Hidden2LayerSize) {
+		ds_list_add(_newNeuron.Weights, random_range(-4, 4));
+	}
+	
+	_newNeuron.Bias = random_range(-1, 1);
+	_newNeuron.update = true;
+
 	ds_list_add(Hidden3Layer, _newNeuron);
 	i++;
 }
@@ -61,8 +87,14 @@ repeat(Hidden3LayerSize) {
 var i = 0;
 repeat(OutputLayerSize) {
 	var _newNeuron = instance_create_depth(x+xoffset*4, y+yoffset*i+16*5, 0, Neuron);
-	_newNeuron.alarm[0] = 2;
-	_newNeuron.inputSize = Hidden3LayerSize;
+	
+	repeat(Hidden3LayerSize) {
+		ds_list_add(_newNeuron.Weights, random_range(-4, 4));
+	}
+	
+	_newNeuron.Bias = random_range(-1, 1);
+	_newNeuron.update = true;
+
 	ds_list_add(OutputLayer, _newNeuron);
 	i++;
 }

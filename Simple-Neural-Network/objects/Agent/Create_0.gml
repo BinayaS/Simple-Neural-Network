@@ -1,5 +1,6 @@
 update = false;
 showLines = false;
+topAgent = false;
 startDist = distance_to_object(Goal);
 
 startX = x;

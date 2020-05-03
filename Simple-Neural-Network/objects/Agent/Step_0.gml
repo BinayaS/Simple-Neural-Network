@@ -102,12 +102,12 @@ if(update) {
 
 	//Update fitness fuction
 	if(touchedGoal) {
-		fitness = (((1/(timer*timer))*1000000000)*startDist*100)*2;
+		fitness = (((1/(timer*timer))*10000000)*startDist*100)*2;
 	} else {
 		if(collision_line(x, y, Goal.x, Goal.y, Solid, true, true) == noone) {
-			fitness = ((1/(dist*dist))*100000000000)*2;
+			fitness = ((1/(dist*dist))*1000000000)*2;
 		} else {
-			fitness = ((1/(dist*dist))*1000000000);
+			fitness = ((1/(dist*dist))*10000000);
 		}
 	}
 

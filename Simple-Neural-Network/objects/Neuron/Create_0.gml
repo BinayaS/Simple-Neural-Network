@@ -4,11 +4,8 @@ Bias = 1;
 
 Output = 0;
 
-inputSize = 0;
-
 input = global.offNumber;
-getInput = false;
 
 update = false;
-updateInput = true;
+updateInput = false;
 showSelf = false;

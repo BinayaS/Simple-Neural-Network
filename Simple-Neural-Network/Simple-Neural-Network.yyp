@@ -199,6 +199,14 @@
             }
         },
         {
+            "Key": "9fd5d220-71bb-447e-b226-6f26282100bd",
+            "Value": {
+                "id": "92c8d2a8-0534-4ed2-acf6-96e9e9481efa",
+                "resourcePath": "scripts\\Temp\\Temp.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "a128950b-5063-4876-b4a6-b99dbd2ea6d1",
             "Value": {
                 "id": "8921b15a-b257-4b92-ac46-7c168e68dce6",
@@ -244,6 +252,14 @@
                 "id": "7000106b-76ab-4be5-bcd3-71a1ee43067c",
                 "resourcePath": "objects\\Neuron\\Neuron.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "c7a0050f-ac2c-4b6d-9360-4c9349919b4c",
+            "Value": {
+                "id": "53813238-2f55-4e80-b984-5ffb0c9e6ebc",
+                "resourcePath": "sprites\\sprAgentTop\\sprAgentTop.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -344,7 +360,8 @@
         }
     ],
     "script_order": [
-        "20670d76-323b-4e6f-b835-2b4417a2bd29"
+        "20670d76-323b-4e6f-b835-2b4417a2bd29",
+        "9fd5d220-71bb-447e-b226-6f26282100bd"
     ],
     "tutorial": ""
 }

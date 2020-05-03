@@ -4,21 +4,22 @@ randomize();
 ToSpawnNumber = 100;
 Alive = ToSpawnNumber;
 
-AgentsList1 = ds_list_create();
-AgentsList2 = ds_list_create();
+AgentsList1 = array_create(ToSpawnNumber);
+AgentsList2 = array_create(ToSpawnNumber);
 
 Globals();
 
-repeat(ToSpawnNumber) {
+for(var i = 0; i < ToSpawnNumber; i++) {
 	var _newAgent = instance_create_depth(x, y, 0, Agent);
 	_newAgent.update = true;
-	ds_list_add(AgentsList1, _newAgent);
+	AgentsList1[i] = _newAgent;
 }
 
 TimeTillRestart = room_speed * 5;
 Timer = TimeTillRestart;
 
 MaxFitness = 0;
+TotalFitness = 0;
 updateFiles = false;
 
 currentRun = 1;

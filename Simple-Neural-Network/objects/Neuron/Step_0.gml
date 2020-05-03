@@ -1,5 +1,5 @@
 if(update) {
-	//Output = 0;
+	Output = 0;
 	
 	//Update output value
 	for(var i = 0; i < ds_list_size(Inputs); i++) {
@@ -16,7 +16,7 @@ if(update) {
 	//Update alpha
 	image_alpha = Output
 } else if(updateInput) {
-	//Output = 0;
+	Output = 0;
 	
 	//Update output value
 	Output += input;
