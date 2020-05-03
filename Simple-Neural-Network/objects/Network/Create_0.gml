@@ -1,5 +1,5 @@
 owner = noone;
-update = false;
+update = true;
 yoffset = 32;
 xoffset = 80;
 moveThreshold = 0.1;
@@ -113,3 +113,5 @@ for(var i = 0; i < OutputLayerSize; i++) {
 }
 
 #endregion
+
+alarm[0] = 2;

@@ -1,11 +1,13 @@
-network.update = update;
-
 if(reset) {
 	update = true;
+	touchedGoal = false;
+	touchedWall = false;
 	sprite_index = sprAgent;
 	x = startX;
 	y = startY;
 	reset = false;
+	network.update = true;
+	network.alarm[0] = 2;
 }
 
 if(update) {
@@ -102,12 +104,18 @@ if(update) {
 
 	//Update fitness fuction
 	if(touchedGoal) {
-		fitness = (((1/(timer*timer))*10000000)*startDist*100)*2;
+		fitness = (((1/(timer*timer))*1000000000)*startDist*100)*10;
+	} else if(touchedWall) {
+		if(collision_line(x, y, Goal.x, Goal.y, Solid, true, true) == noone) {
+			fitness = ((1/(dist*dist))*100000000000)*2/4;
+		} else {
+			fitness = ((1/(dist*dist))*1000000000)/4;
+		}
 	} else {
 		if(collision_line(x, y, Goal.x, Goal.y, Solid, true, true) == noone) {
-			fitness = ((1/(dist*dist))*1000000000)*2;
+			fitness = ((1/(dist*dist))*100000000000)*2;
 		} else {
-			fitness = ((1/(dist*dist))*10000000);
+			fitness = ((1/(dist*dist))*1000000000);
 		}
 	}
 

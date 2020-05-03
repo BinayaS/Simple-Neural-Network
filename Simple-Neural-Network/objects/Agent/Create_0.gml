@@ -15,6 +15,7 @@ setBack = 6;
 
 fitness = 0;
 touchedGoal = false;
+touchedWall = false;
 timer = 0;
 
 up = 0;

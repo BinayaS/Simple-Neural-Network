@@ -15,16 +15,6 @@
             "m_owner": "307142f9-8c36-4b60-8d62-2fb34aadf4c5"
         },
         {
-            "id": "f1dd405a-2042-48c2-be76-dec0fbb16f72",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 3,
-            "m_owner": "307142f9-8c36-4b60-8d62-2fb34aadf4c5"
-        },
-        {
             "id": "51fad83e-ae0a-4452-9af4-3197a52ab4fc",
             "modelName": "GMEvent",
             "mvc": "1.0",
@@ -32,6 +22,16 @@
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 12,
+            "m_owner": "307142f9-8c36-4b60-8d62-2fb34aadf4c5"
+        },
+        {
+            "id": "168ff7ee-9f22-4403-9f2f-56dee77ba0c3",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 2,
             "m_owner": "307142f9-8c36-4b60-8d62-2fb34aadf4c5"
         }
     ],

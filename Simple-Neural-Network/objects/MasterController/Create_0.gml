@@ -1,11 +1,16 @@
 //Get random seed
 randomize();
 
+move = true;
+
+startX = x;
+startY = y;
+
 ToSpawnNumber = 100;
 Alive = ToSpawnNumber;
 
-AgentsList1 = array_create(ToSpawnNumber);
-AgentsList2 = array_create(ToSpawnNumber);
+AgentsList1 = [];
+AgentsList2 = [];
 
 Globals();
 
@@ -23,3 +28,4 @@ TotalFitness = 0;
 updateFiles = false;
 
 currentRun = 1;
+hitGoal = 0;

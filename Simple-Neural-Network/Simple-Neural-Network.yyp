@@ -31,6 +31,14 @@
     },
     "resources": [
         {
+            "Key": "06330e82-5d79-4f58-97d4-0217fe2212e7",
+            "Value": {
+                "id": "2b4cc1c8-c19c-4bf0-b713-9353835e33cb",
+                "resourcePath": "scripts\\CopyToNetwork\\CopyToNetwork.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "08168664-5956-4bc0-85e8-aeb53995fefd",
             "Value": {
                 "id": "14a79870-6f26-4783-9e83-08227851ab63",
@@ -43,6 +51,14 @@
             "Value": {
                 "id": "a896801e-cb7d-40f8-b4e5-1b680bd504f4",
                 "resourcePath": "scripts\\Globals\\Globals.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "2b0c101e-ab40-4692-b22b-3df5dec3b758",
+            "Value": {
+                "id": "189ba38b-2a36-4a49-bd9a-230736d063de",
+                "resourcePath": "scripts\\CrossBreedNetworks\\CrossBreedNetworks.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -92,6 +108,14 @@
                 "id": "c653abd3-4668-4da5-af50-c1cea33ac846",
                 "resourcePath": "sprites\\sprNeuron\\sprNeuron.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "6e661712-3ae6-453f-a963-8b919d0ee3a9",
+            "Value": {
+                "id": "9b891036-831c-4bff-a34c-64144b3261a7",
+                "resourcePath": "scripts\\PrintToFiles\\PrintToFiles.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -327,6 +351,22 @@
             }
         },
         {
+            "Key": "eae1d5d5-338e-48a1-9324-1e112b822713",
+            "Value": {
+                "id": "bba8e7f6-b1b2-488a-982c-ce342753b12f",
+                "resourcePath": "scripts\\TempCrossBreed\\TempCrossBreed.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "ee2fc837-c74d-4302-8d25-90b76a059b94",
+            "Value": {
+                "id": "fac02cd1-d258-44db-8bbd-4357537790fc",
+                "resourcePath": "scripts\\RandomMutations\\RandomMutations.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "f418569b-3bdd-4706-a0e4-364317f54032",
             "Value": {
                 "id": "9e5f46b1-6df3-42c1-8c2d-5628f4533efa",
@@ -361,7 +401,12 @@
     ],
     "script_order": [
         "20670d76-323b-4e6f-b835-2b4417a2bd29",
-        "9fd5d220-71bb-447e-b226-6f26282100bd"
+        "9fd5d220-71bb-447e-b226-6f26282100bd",
+        "6e661712-3ae6-453f-a963-8b919d0ee3a9",
+        "06330e82-5d79-4f58-97d4-0217fe2212e7",
+        "2b0c101e-ab40-4692-b22b-3df5dec3b758",
+        "ee2fc837-c74d-4302-8d25-90b76a059b94",
+        "eae1d5d5-338e-48a1-9324-1e112b822713"
     ],
     "tutorial": ""
 }
