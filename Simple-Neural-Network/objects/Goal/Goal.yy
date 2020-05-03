@@ -4,7 +4,16 @@
     "mvc": "1.0",
     "name": "Goal",
     "eventList": [
-        
+        {
+            "id": "3b9ef7aa-e1fe-4b0d-a213-25664afc1416",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 51,
+            "eventtype": 6,
+            "m_owner": "dfec61f5-65da-45a9-9b7d-557f14d8bffb"
+        }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,

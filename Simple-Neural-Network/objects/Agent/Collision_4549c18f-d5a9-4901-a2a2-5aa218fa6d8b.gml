@@ -7,4 +7,5 @@ if(update) {
 	down = 0;
 	left = 0;
 	right = 0;
+	MasterController.deadByWall++;
 }

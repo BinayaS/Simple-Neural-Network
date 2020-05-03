@@ -1,10 +1,17 @@
 update = false;
 showLines = false;
+showText = false;
 topAgent = false;
 startDist = distance_to_object(Goal);
 
+image_alpha = 0.8;
+
 startX = x;
 startY = y;
+
+checkX = x;
+checkY = y;
+
 reset = false;
 
 walkspd = 6;

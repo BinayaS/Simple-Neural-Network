@@ -6,6 +6,7 @@ if(Timer == 0) {
 	Timer = TimeTillRestart;
 	TotalFitness = 0;
 	hitGoal = 0;
+	deadByWall = 0;
 	
 	//sort player's array
 	for(var i = 0; i < ToSpawnNumber-1; i++) {
@@ -42,5 +43,9 @@ if(Timer == 0) {
 	Temp();
 	
 	move = true;
+	if(currentRun mod 10 == 0) {
+		TimeTillRestart += room_speed;	
+	}
+	instance_destroy(Trail);
 
 }

@@ -51,65 +51,77 @@ var _neuronRight = OutputLayer[3];
 	
 //Left or right
 if(_neuronLeft.Output > moveThreshold && _neuronRight.Output > moveThreshold) {
-if(_neuronLeft.Output > _neuronRight.Output) {
-	owner.left = 1;
-	owner.right = 0;
-} else {
-	owner.right = 1;
-	owner.left = 0;
-}
-} else {
-if(_neuronLeft.Output > moveThreshold) {
-	owner.left = 1;
-	owner.right = 0;
-} else if(_neuronRight.Output > moveThreshold) {
-	owner.right = 1;
-	owner.left = 0;
-}
+	if(_neuronLeft.Output > _neuronRight.Output) {
+		owner.left = 1;
+		owner.right = 0;
+	} else {
+		owner.right = 1;
+		owner.left = 0;
+	}
+	} else {
+	if(_neuronLeft.Output > moveThreshold) {
+		owner.left = 1;
+		owner.right = 0;
+	} else if(_neuronRight.Output > moveThreshold) {
+		owner.right = 1;
+		owner.left = 0;
+	}	else {
+		owner.right = 0;
+		owner.left = 0;
+	}
 }
 	
 //Up or down
 if(_neuronUp.Output > moveThreshold && _neuronDown.Output > moveThreshold) {
-if(_neuronUp.Output > _neuronDown.Output) {
-	owner.up = 1;
-	owner.down = 0;
-} else {
-	owner.down = 1;
-	owner.up = 0;
-}
-} else {
-if(_neuronUp.Output > moveThreshold) {
-	owner.up = 1;
-	owner.down = 0;
-} else if(_neuronDown.Output > moveThreshold) {
-	owner.down = 1;
-	owner.up = 0;
-}
+	if(_neuronUp.Output > _neuronDown.Output) {
+		owner.up = 1;
+		owner.down = 0;
+	} else {
+		owner.down = 1;
+		owner.up = 0;
+	}
+	} else {
+	if(_neuronUp.Output > moveThreshold) {
+		owner.up = 1;
+		owner.down = 0;
+	} else if(_neuronDown.Output > moveThreshold) {
+		owner.down = 1;
+		owner.up = 0;
+	} else {
+		owner.down = 0;
+		owner.up = 0;	
+	}
 }
 #endregion
 
-	
-for(var i = 0; i < InputLayerSize; i++) {
-	var _neuron = InputLayer[i];
-	_neuron.showSelf = showNetwork;
-}
-for(var i = 0; i < Hidden1LayerSize; i++) {
-	var _neuron = Hidden1Layer[i];
-	_neuron.showSelf = showNetwork;
-}
-for(var i = 0; i < Hidden2LayerSize; i++) {
-	var _neuron = Hidden2Layer[i];
-	_neuron.showSelf = showNetwork;
-}
-for(var i = 0; i < Hidden3LayerSize; i++) {
-	var _neuron = Hidden3Layer[i];
-	_neuron.showSelf = showNetwork;
-}
-for(var i = 0; i < OutputLayerSize; i++) {
-	var _neuron = OutputLayer[i];
-	_neuron.showSelf = showNetwork;
-}
 
 if(update) {
-	alarm[0] = 2;
+	alarm[0] = 3;
+	
+	for(var i = 0; i < InputLayerSize; i++) {
+		var _neuron = InputLayer[i];
+		_neuron.showSelf = showNetwork;
+		//_neuron.alarm[0] = 3;
+	}
+	for(var i = 0; i < Hidden1LayerSize; i++) {
+		var _neuron = Hidden1Layer[i];
+		_neuron.showSelf = showNetwork;
+		//_neuron.alarm[0] = 3;
+	}
+	for(var i = 0; i < Hidden2LayerSize; i++) {
+		var _neuron = Hidden2Layer[i];
+		_neuron.showSelf = showNetwork;
+		//_neuron.alarm[0] = 3;
+	}
+	for(var i = 0; i < Hidden3LayerSize; i++) {
+		var _neuron = Hidden3Layer[i];
+		_neuron.showSelf = showNetwork;
+		//_neuron.alarm[0] = 3;
+	}
+	for(var i = 0; i < OutputLayerSize; i++) {
+		var _neuron = OutputLayer[i];
+		_neuron.showSelf = showNetwork;
+		//_neuron.alarm[0] = 3;
+	}
+	
 }

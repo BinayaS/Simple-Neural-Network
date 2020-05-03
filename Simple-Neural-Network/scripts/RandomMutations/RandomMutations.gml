@@ -17,7 +17,7 @@ for(var i = 0; i < size1; i++) {
 		var rand = random(1)
 		if(rand < mutateRate) {
 			//Mutate weight
-			argument0.Hidden1Layer[i].Weights[k] += random_range(-0.5, 0.5);; // = random_range(-4, 4);
+			argument0.Hidden1Layer[i].Weights[k] += random_range(-0.5, 0.5); // = random_range(-4, 4);
 		}
 		k++;
 	}
@@ -25,7 +25,7 @@ for(var i = 0; i < size1; i++) {
 		var rand = random(1)
 		if(rand < mutateRate) {
 		//Mutate Bias
-		argument0.Hidden1Layer[i].Bias += random_range(-0.1, 0.1); // = random_range(-1, 1);
+		argument0.Hidden1Layer[i].Bias += random_range(-0.1, 0.1); // = random_range(-0.5, 0.5);
 	}
 }
 
@@ -36,7 +36,7 @@ for(var i = 0; i < size2; i++) {
 		var rand = random(1)
 		if(rand < mutateRate) {
 			//Mutate weight
-			argument0.Hidden2Layer[i].Weights[k] += random_range(-0.5, 0.5);
+			argument0.Hidden2Layer[i].Weights[k] += random_range(-0.5, 0.5); 
 		}
 		k++;
 	}
@@ -55,7 +55,7 @@ for(var i = 0; i < size3; i++) {
 		var rand = random(1)
 		if(rand < mutateRate) {
 			//Mutate weight
-			argument0.Hidden3Layer[i].Weights[k] += random_range(-0.5, 0.5);
+			argument0.Hidden3Layer[i].Weights[k] += random_range(-0.5, 0.5); 
 		}
 		k++;
 	}
@@ -74,7 +74,7 @@ for(var i = 0; i < size4; i++) {
 		var rand = random(1)
 		if(rand < mutateRate) {
 			//Mutate weight
-			argument0.OutputLayer[i].Weights[k] += random_range(-0.5, 0.5);
+			argument0.OutputLayer[i].Weights[k] += random_range(-0.5, 0.5); 
 		}
 		k++;
 	}

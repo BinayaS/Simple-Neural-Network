@@ -1,11 +1,30 @@
 #region Evolution Function
 	
-//Replace bottom 50 with top 50
-for(var i = 50; i < ToSpawnNumber; i++) {
-	instance_destroy(AgentsList1[i]);
-	AgentsList1[i] = AgentsList1[i-50];
+//Replace the rest with the top 25%
+var i = 0;
+repeat(25) {
+	instance_destroy(AgentsList1[i+25]);
+	instance_destroy(AgentsList1[i+50]);
+	instance_destroy(AgentsList1[i+75]);
+	AgentsList1[i+25] = AgentsList1[i];
+	AgentsList1[i+50] = AgentsList1[i];
+	AgentsList1[i+75] = AgentsList1[i];
+	i++;	
 }
-	
+
+//sort player's array
+//for(var i = 0; i < ToSpawnNumber-1; i++) {
+//	var minIndex = i;
+//	for(var j = i+1; j < ToSpawnNumber; j++) {
+//		if(AgentsList1[j].fitness > AgentsList1[minIndex].fitness) {
+//			minIndex = j;	
+//		}
+//	}
+//	var temp = AgentsList1[minIndex];
+//	AgentsList1[minIndex] = AgentsList1[i];
+//	AgentsList1[i] = temp;
+//}
+
 //Find the sum of fitness
 for(var i = 0; i < ToSpawnNumber; i++) {
 	var _agent = AgentsList1[i];
@@ -16,19 +35,19 @@ for(var i = 0; i < ToSpawnNumber; i++) {
 var z = 1;
 repeat(ToSpawnNumber-1) {
 	//Get parent 1
-	//var topAgent0 = AgentsList1[0];
-	var rand = random_range(0, TotalFitness);
-	var runningSum = 0;
-	var topAgent0 = noone;
-	for(i = 0; i < ToSpawnNumber; i++) {
-		var _agent = AgentsList1[i];
-		runningSum += _agent.fitness;
-		if(runningSum > rand) {
-			topAgent0 = _agent;
-			//show_debug_message("Agent0: " + string(i));
-			break;
-		}
-	}
+	var topAgent0 = AgentsList1[0];
+	//var rand = random_range(0, TotalFitness);
+	//var runningSum = 0;
+	//var topAgent0 = noone;
+	//for(i = 0; i < ToSpawnNumber; i++) {
+	//	var _agent = AgentsList1[i];
+	//	runningSum += _agent.fitness;
+	//	if(runningSum > rand) {
+	//		topAgent0 = _agent;
+	//		//show_debug_message("Agent0: " + string(i));
+	//		break;
+	//	}
+	//}
 	
 	//Get parent 2
 	//var topAgent1 = AgentsList1[z];
@@ -48,6 +67,8 @@ repeat(ToSpawnNumber-1) {
 	//Create a new agent and 
 	var _newAgent = instance_create_depth(x, y, 0, Agent);
 	_newAgent.update = true;
+	_newAgent.showLines = showLines;
+	_newAgent.showText = showText;
 	
 	CopyToNetwork(topAgent0.network, _newAgent.network);
 	CrossBreedNetworks(topAgent1.network, _newAgent.network);
@@ -63,6 +84,8 @@ repeat(ToSpawnNumber-1) {
 //New agent
 var _newAgent = instance_create_depth(x, y, 0, Agent);
 _newAgent.update = true;
+_newAgent.showLines = showLines;
+_newAgent.showText = showText;
 	
 //Last generation's top agent
 var _lastGenAgent = AgentsList1[0];
@@ -115,6 +138,20 @@ AgentsList2[0] = _newAgent;
 //	_newAgent2.update = true;
 //	AgentsList1[i] = _newAgent2;
 //}
+
+for(var i = 75; i < ToSpawnNumber; i++) {
+	var _newAgent = instance_create_depth(x, y, 0, Agent);
+	_newAgent.update = true;
+	_newAgent.showLines = showLines;
+	_newAgent.showText = showText;
+	instance_destroy(AgentsList2[i]);
+	AgentsList2[i] = _newAgent;
+}
+
+var i = 75;
+repeat(25) {
+	RandomMutationsExtreme(AgentsList2[i].network);
+}
 
 //Remove old generation
 for(var i = 0; i < ToSpawnNumber; i++) {

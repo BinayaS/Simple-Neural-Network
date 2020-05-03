@@ -9,3 +9,5 @@ input = global.offNumber;
 update = false;
 updateInput = false;
 showSelf = false;
+
+//alarm[0] = 2;
