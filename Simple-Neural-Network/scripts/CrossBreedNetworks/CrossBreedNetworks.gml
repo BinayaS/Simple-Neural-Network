@@ -15,7 +15,7 @@ for(var i = 0; i < size1; i++) {
 	repeat(size0) {
 		//swap between the two Weights based on random chance.
 		var chance = irandom_range(0, 100);
-		if(chance < 25) {
+		if(chance < 1) {
 			argument1.Hidden1Layer[i].Weights[k] = argument0.Hidden1Layer[i].Weights[k];
 		}
 		k++;
@@ -32,7 +32,7 @@ for(var i = 0; i < size2; i++) {
 	repeat(size1) {
 		//swap between the two Weights based on random chance.
 		var chance = irandom_range(0, 100);
-		if(chance < 25) {
+		if(chance < 1) {
 			argument1.Hidden2Layer[i].Weights[k] = argument0.Hidden2Layer[i].Weights[k];
 		}
 		k++;
@@ -49,7 +49,7 @@ for(var i = 0; i < size3; i++) {
 	repeat(size1) {
 		//swap between the two Weights based on random chance.
 		var chance = irandom_range(0, 100);
-		if(chance < 25) {
+		if(chance < 1) {
 			argument1.Hidden3Layer[i].Weights[k] = argument0.Hidden3Layer[i].Weights[k];
 		}
 		k++;
@@ -67,7 +67,7 @@ for(var i = 0; i < size4; i++) {
 	repeat(size2) {
 		//swap between the two Weights based on random chance.
 		var chance = irandom_range(0, 100);
-		if(chance < 25) {
+		if(chance < 1) {
 			argument1.OutputLayer[i].Weights[k] = argument0.OutputLayer[i].Weights[k];
 		}
 		k++;

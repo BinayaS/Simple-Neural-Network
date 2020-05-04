@@ -24,7 +24,7 @@ for(var i = 0; i < ToSpawnNumber; i++) {
 	AgentsList1[i] = _newAgent;
 }
 
-TimeTillRestart = room_speed * 6;
+TimeTillRestart = room_speed * 5;
 Timer = TimeTillRestart;
 
 MaxFitness = 0;
@@ -34,3 +34,4 @@ updateFiles = false;
 currentRun = 1;
 hitGoal = 0;
 deadByWall = 0;
+haveHit = false;

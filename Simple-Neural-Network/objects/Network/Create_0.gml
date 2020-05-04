@@ -2,6 +2,8 @@ owner = noone;
 update = true;
 yoffset = 32;
 xoffset = 80;
+baseX = 100;
+baseY = 0;
 moveThreshold = 0.1;
 showNetwork = false;
 
@@ -21,7 +23,7 @@ OutputLayer = [];
 
 //Input (9)
 for(var i = 0; i < InputLayerSize; i++) {
-	var _newNeuron = instance_create_depth(x, y+yoffset*i+16, 0, Neuron);
+	var _newNeuron = instance_create_depth(x+baseX, y+yoffset*i+16, 0, Neuron);
 	_newNeuron.Weights[0] = random_range(-4, 4);
 	_newNeuron.Bias = random_range(-1, 1);
 	_newNeuron.updateInput = true;
@@ -30,7 +32,7 @@ for(var i = 0; i < InputLayerSize; i++) {
 
 //Hidden1 (10)
 for(var i = 0; i < Hidden1LayerSize; i++) {
-	var _newNeuron = instance_create_depth(x+xoffset, y+yoffset*i, 0, Neuron);
+	var _newNeuron = instance_create_depth(x+xoffset+baseX, y+yoffset*i, 0, Neuron);
 	
 	for(var j = 0; j < InputLayerSize; j++) {
 		_newNeuron.Weights[j] = random_range(-4, 4);
@@ -43,7 +45,7 @@ for(var i = 0; i < Hidden1LayerSize; i++) {
 
 //Hidden2 (10)
 for(var i = 0; i < Hidden2LayerSize; i++) {
-	var _newNeuron = instance_create_depth(x+xoffset*2, y+yoffset*i, 0, Neuron);
+	var _newNeuron = instance_create_depth(x+xoffset*2+baseX, y+yoffset*i, 0, Neuron);
 	
 	for(var j = 0; j < Hidden1LayerSize; j++) {
 		_newNeuron.Weights[j] = random_range(-4, 4);
@@ -56,7 +58,7 @@ for(var i = 0; i < Hidden2LayerSize; i++) {
 
 //Hidden3 (10)
 for(var i = 0; i < Hidden3LayerSize; i++) {
-	var _newNeuron = instance_create_depth(x+xoffset*3, y+yoffset*i, 0, Neuron);
+	var _newNeuron = instance_create_depth(x+xoffset*3+baseX, y+yoffset*i, 0, Neuron);
 	
 	for(var j = 0; j < Hidden2LayerSize; j++) {
 		_newNeuron.Weights[j] = random_range(-4, 4);
@@ -69,7 +71,7 @@ for(var i = 0; i < Hidden3LayerSize; i++) {
 
 //Output (4)
 for(var i = 0; i < OutputLayerSize; i++) {
-	var _newNeuron = instance_create_depth(x+xoffset*4, y+yoffset*i+16*5, 0, Neuron);
+	var _newNeuron = instance_create_depth(x+xoffset*4+baseX, y+yoffset*i+16*5, 0, Neuron);
 	
 	for(var j = 0; j < Hidden3LayerSize; j++) {
 		_newNeuron.Weights[j] = random_range(-4, 4);

@@ -1,3 +1,5 @@
+y = startY + baseY;
+
 if(update) {
 	Output = 0;
 	

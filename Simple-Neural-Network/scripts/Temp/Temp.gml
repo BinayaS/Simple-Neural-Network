@@ -30,39 +30,19 @@ for(var i = 0; i < ToSpawnNumber; i++) {
 	var _agent = AgentsList1[i];
 	TotalFitness += _agent.fitness;
 }
-	
+
 //Get 99 new agents that are crossbred from old generation
 var z = 1;
 repeat(ToSpawnNumber-1) {
-	//Get parent 1
-	var topAgent0 = AgentsList1[0];
-	//var rand = random_range(0, TotalFitness);
-	//var runningSum = 0;
-	//var topAgent0 = noone;
-	//for(i = 0; i < ToSpawnNumber; i++) {
-	//	var _agent = AgentsList1[i];
-	//	runningSum += _agent.fitness;
-	//	if(runningSum > rand) {
-	//		topAgent0 = _agent;
-	//		//show_debug_message("Agent0: " + string(i));
-	//		break;
-	//	}
+	
+	//if(!haveHit) {
+	//	var _rand = irandom_range(0, 10);
+	//	var topAgent0 = AgentsList1[_rand];
+	//} else {
+	//	var topAgent0 = AgentsList1[0];
 	//}
 	
-	//Get parent 2
-	//var topAgent1 = AgentsList1[z];
-	var rand = random_range(0, TotalFitness);
-	var runningSum = 0;
-	var topAgent1 = noone;
-	for(i = 0; i < ToSpawnNumber; i++) {
-		var _agent = AgentsList1[i];
-		runningSum += _agent.fitness;
-		if(runningSum > rand) {
-			topAgent1 = _agent;
-			//show_debug_message("Agent1: " + string(i));
-			break;
-		}
-	}
+	var topAgent0 = AgentsList1[0];
 		
 	//Create a new agent and 
 	var _newAgent = instance_create_depth(x, y, 0, Agent);
@@ -71,8 +51,13 @@ repeat(ToSpawnNumber-1) {
 	_newAgent.showText = showText;
 	
 	CopyToNetwork(topAgent0.network, _newAgent.network);
-	CrossBreedNetworks(topAgent1.network, _newAgent.network);
-	RandomMutations(_newAgent.network);
+	if(hitGoal == 0) {
+		RandomMutationsExtreme(_newAgent.network);
+		//show_debug_message("EXT");
+	} else {
+		RandomMutations(_newAgent.network);
+		//show_debug_message("NORM");
+	}
 		
 	//Add them to new generation list
 	AgentsList2[z] = _newAgent;
@@ -92,6 +77,8 @@ var _lastGenAgent = AgentsList1[0];
 //show_message(AgentsList1[0].fitness);
 
 CopyToNetwork(_lastGenAgent.network, _newAgent.network);
+_newAgent.topAgent = true;
+AgentsList2[0] = _newAgent;
 
 ////Hidden1 layer
 //for(var k = 0; k < global.Hidden1Size; k++) {
@@ -124,10 +111,7 @@ CopyToNetwork(_lastGenAgent.network, _newAgent.network);
 //	array_copy(_newAgentNeuron.Weights, 0, _lastGenNeuron.Weights, 0, array_length_1d(_lastGenNeuron.Weights));
 //	_newAgentNeuron.Bias = _lastGenNeuron.Bias;
 //}
-	
-_newAgent.topAgent = true;
-//Camera.follow = _newAgent;
-AgentsList2[0] = _newAgent;
+
 	
 #endregion
 
@@ -138,19 +122,15 @@ AgentsList2[0] = _newAgent;
 //	_newAgent2.update = true;
 //	AgentsList1[i] = _newAgent2;
 //}
-
-for(var i = 75; i < ToSpawnNumber; i++) {
-	var _newAgent = instance_create_depth(x, y, 0, Agent);
-	_newAgent.update = true;
-	_newAgent.showLines = showLines;
-	_newAgent.showText = showText;
-	instance_destroy(AgentsList2[i]);
-	AgentsList2[i] = _newAgent;
-}
-
-var i = 75;
-repeat(25) {
-	RandomMutationsExtreme(AgentsList2[i].network);
+if(hitGoal == 0) {
+	for(var i = 75; i < ToSpawnNumber; i++) {
+		var _newAgent = instance_create_depth(x, y, 0, Agent);
+		_newAgent.update = true;
+		_newAgent.showLines = showLines;
+		_newAgent.showText = showText;
+		instance_destroy(AgentsList2[i]);
+		AgentsList2[i] = _newAgent;
+	}
 }
 
 //Remove old generation

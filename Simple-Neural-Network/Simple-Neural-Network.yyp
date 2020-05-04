@@ -55,6 +55,14 @@
             }
         },
         {
+            "Key": "2086981e-4ff1-4681-8fa3-672d6c12b0d7",
+            "Value": {
+                "id": "9e33b6b8-aac9-44a3-862b-7b57f909e38d",
+                "resourcePath": "objects\\objSpawnPoint\\objSpawnPoint.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "2b0c101e-ab40-4692-b22b-3df5dec3b758",
             "Value": {
                 "id": "189ba38b-2a36-4a49-bd9a-230736d063de",
@@ -108,6 +116,14 @@
                 "id": "10d6d82a-84c4-41de-b725-41f88a27ad90",
                 "resourcePath": "views\\4ec9c4bc-52d1-48be-98fe-1ecc5ad115b5.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "5612f90c-252d-408f-bc23-c5335fcee99e",
+            "Value": {
+                "id": "6e93676a-cab0-4020-9a84-fc329a6cf915",
+                "resourcePath": "objects\\SmallGoal\\SmallGoal.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -311,6 +327,14 @@
             }
         },
         {
+            "Key": "af747657-6bcb-47df-ac03-eac547d104e0",
+            "Value": {
+                "id": "6266f25a-59e6-4ee6-afaf-d1255ed8f23b",
+                "resourcePath": "rooms\\room4\\room4.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "b58f074e-a0fc-4fa2-a7ed-9a51c1e3752c",
             "Value": {
                 "id": "c3e3735f-4f06-4caf-a8db-10956e8cf837",
@@ -375,6 +399,14 @@
             }
         },
         {
+            "Key": "d885f677-f465-4237-bf7a-e27e3480edb8",
+            "Value": {
+                "id": "0cb6cee8-e09f-4e3a-9c4d-4f556f7e2216",
+                "resourcePath": "sprites\\sprSpawnPoint\\sprSpawnPoint.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "dfec61f5-65da-45a9-9b7d-557f14d8bffb",
             "Value": {
                 "id": "9071df86-c103-4669-a125-4cfef88490f2",
@@ -396,6 +428,22 @@
                 "id": "fbab8827-d5a8-4580-8043-e6edf2411f8e",
                 "resourcePath": "sprites\\sprNeuronOutline\\sprNeuronOutline.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "e873b7e1-254b-459f-9b02-bcc074073c2d",
+            "Value": {
+                "id": "4184700b-ae3d-4103-aca1-15cff49a64f4",
+                "resourcePath": "sprites\\sprSmallGoal\\sprSmallGoal.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "ea46e0aa-4702-44c2-b1fa-5db26215afbc",
+            "Value": {
+                "id": "3011e22a-0d1e-4c38-bb48-61d86672bfd7",
+                "resourcePath": "rooms\\room3\\room3.yy",
+                "resourceType": "GMRoom"
             }
         },
         {

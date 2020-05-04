@@ -7,7 +7,7 @@ var size2 = argument0.Hidden2LayerSize;
 var size3 = argument0.Hidden3LayerSize;
 var size4 = argument0.OutputLayerSize;
 
-var mutateRate = 0.25;
+var mutateRate = 0.5;
 
 //Give random values to Hidden1LayerSize
 for(var i = 0; i < size1; i++) {

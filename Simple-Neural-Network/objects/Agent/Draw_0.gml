@@ -11,6 +11,9 @@ if(showLines) {
 }
 if(topAgent) {
 	network.showNetwork = true;
+	draw_set_color($FFFF00);
+	draw_line(x, y, Goal.x, Goal.y);
+	draw_set_color(c_white);
 	draw_sprite_ext(sprAgentTop, 0, x, y, image_xscale, image_yscale, image_angle, c_white, image_alpha);
 } else {
 	draw_self();	

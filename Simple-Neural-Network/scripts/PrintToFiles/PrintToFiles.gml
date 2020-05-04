@@ -24,6 +24,27 @@
 	global.fitnessFile = file_text_open_append(working_directory + "Fitness.txt");
 	file_text_write_string(global.fitnessFile, runString);
 	file_text_writeln(global.fitnessFile);
+	
+	global.hitGoalFile = file_text_open_append(working_directory + "HitGoal.txt");
+	file_text_write_string(global.hitGoalFile, runString);
+	file_text_writeln(global.hitGoalFile);
+	file_text_write_string(global.hitGoalFile, string(hitGoal));
+	file_text_writeln(global.hitGoalFile);
+	file_text_close(global.hitGoalFile);
+	
+	global.hitWallFile = file_text_open_append(working_directory + "HitWall.txt");
+	file_text_write_string(global.hitWallFile, runString);
+	file_text_writeln(global.hitWallFile);
+	file_text_write_string(global.hitWallFile, string(deadByWall));
+	file_text_writeln(global.hitWallFile);
+	file_text_close(global.hitWallFile);
+	
+	global.aliveFile = file_text_open_append(working_directory + "Alive.txt");
+	file_text_write_string(global.aliveFile, runString);
+	file_text_writeln(global.aliveFile);
+	file_text_write_string(global.aliveFile, string(Alive));
+	file_text_writeln(global.aliveFile);
+	file_text_close(global.aliveFile);
 
 	if(updateFiles) {
 		global.weightsFile = file_text_open_write(working_directory + "Weights.txt");

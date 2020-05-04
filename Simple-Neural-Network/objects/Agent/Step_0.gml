@@ -145,33 +145,29 @@ if(update) {
 //}
 
 
-var _fitDist = (1/(dist*dist))*100000000; //(startDist - dist);
+var _fitDist = power(startDist - dist, 4); //(1/(dist*dist))*100000000; 
 	
 if(touchedGoal) {
-	_fitDist = _fitDist * 10000000000000;
+	_fitDist = power(_fitDist, 4);
 
 } else if(touchedWall) {
 	
 	if(collision_line(x, y, Goal.x, Goal.y, Solid, true, true) != noone) {
-		_fitDist = -_fitDist;
+		_fitDist = sqrt(_fitDist)/4;
 	} else {
-		_fitDist = _fitDist/1000000;
+		_fitDist = _fitDist/2;
 	}
 	
 } else {
 	if(collision_line(x, y, Goal.x, Goal.y, Solid, true, true) != noone) {
-		_fitDist = _fitDist/1000000;
+		_fitDist = sqrt(_fitDist);
 	} else {
-		_fitDist = _fitDist/10000;
+		_fitDist = _fitDist;
 	}
 }
 
-if(timer mod 5 == 0) {
-	if(abs(checkX - x) < 100 && abs(checkY - y) < 100) {
-		_fitDist = _fitDist/1000;
-	}
-	checkX = x;
-	checkY = y;
-}
+fitness = (_fitDist/10000)+smallGoals*1000;
 
-fitness = _fitDist*100;
+if(!place_meeting(x, y, SmallGoal)) {
+	smallGoalHit = false;	
+}

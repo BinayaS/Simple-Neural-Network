@@ -7,7 +7,7 @@ var size2 = argument0.Hidden2LayerSize;
 var size3 = argument0.Hidden3LayerSize;
 var size4 = argument0.OutputLayerSize;
 
-var mutateRate = 0.01;
+var mutateRate = 0.005;
 
 //Give random values to Hidden1LayerSize
 for(var i = 0; i < size1; i++) {
@@ -17,7 +17,7 @@ for(var i = 0; i < size1; i++) {
 		var rand = random(1)
 		if(rand < mutateRate) {
 			//Mutate weight
-			argument0.Hidden1Layer[i].Weights[k] += random_range(-0.5, 0.5); // = random_range(-4, 4);
+			argument0.Hidden1Layer[i].Weights[k] += random_range(-0.025, 0.025); // = random_range(-4, 4);
 		}
 		k++;
 	}
@@ -25,7 +25,7 @@ for(var i = 0; i < size1; i++) {
 		var rand = random(1)
 		if(rand < mutateRate) {
 		//Mutate Bias
-		argument0.Hidden1Layer[i].Bias += random_range(-0.1, 0.1); // = random_range(-0.5, 0.5);
+		argument0.Hidden1Layer[i].Bias += random_range(-0.025, 0.025);// = random_range(-0.5, 0.5);
 	}
 }
 
@@ -36,7 +36,7 @@ for(var i = 0; i < size2; i++) {
 		var rand = random(1)
 		if(rand < mutateRate) {
 			//Mutate weight
-			argument0.Hidden2Layer[i].Weights[k] += random_range(-0.5, 0.5); 
+			argument0.Hidden2Layer[i].Weights[k] += random_range(-0.025, 0.025);
 		}
 		k++;
 	}
@@ -44,7 +44,7 @@ for(var i = 0; i < size2; i++) {
 		var rand = random(1)
 		if(rand < mutateRate) {
 		//Mutate Bias
-		argument0.Hidden2Layer[i].Bias += random_range(-0.1, 0.1);
+		argument0.Hidden2Layer[i].Bias += random_range(-0.025, 0.025);
 	}
 }
 
@@ -55,7 +55,7 @@ for(var i = 0; i < size3; i++) {
 		var rand = random(1)
 		if(rand < mutateRate) {
 			//Mutate weight
-			argument0.Hidden3Layer[i].Weights[k] += random_range(-0.5, 0.5); 
+			argument0.Hidden3Layer[i].Weights[k] += random_range(-0.025, 0.025);
 		}
 		k++;
 	}
@@ -63,7 +63,7 @@ for(var i = 0; i < size3; i++) {
 		var rand = random(1)
 		if(rand < mutateRate) {
 		//Mutate Bias
-		argument0.Hidden3Layer[i].Bias += random_range(-0.1, 0.1);
+		argument0.Hidden3Layer[i].Bias += random_range(-0.025, 0.025);
 	}
 }
 
@@ -74,7 +74,7 @@ for(var i = 0; i < size4; i++) {
 		var rand = random(1)
 		if(rand < mutateRate) {
 			//Mutate weight
-			argument0.OutputLayer[i].Weights[k] += random_range(-0.5, 0.5); 
+			argument0.OutputLayer[i].Weights[k] += random_range(-0.025, 0.025);
 		}
 		k++;
 	}
@@ -82,6 +82,6 @@ for(var i = 0; i < size4; i++) {
 		var rand = random(1)
 		if(rand < mutateRate) {
 		//Mutate Bias
-		argument0.OutputLayer[i].Bias += random_range(-0.1, 0.1);
+		argument0.OutputLayer[i].Bias += random_range(-0.025, 0.025);
 	}
 }
