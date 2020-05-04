@@ -32,7 +32,7 @@ if(Timer == 0) {
 	runString = "Run: " + string(currentRun);
 	currentRun += 1;
 	
-	PrintToFiles();
+	//PrintToFiles();
 	
 	Temp();
 	
@@ -47,9 +47,9 @@ if(Timer == 0) {
 	//		room_restart();	
 	//	}
 	//}
-	if(currentRun mod 100 == 0) {
-		game_end();
-	}
+	//if(currentRun mod 100 == 0) {
+	//	game_end();
+	//}
 
 	if(hitGoal == 0) {
 		haveHit = false;
