@@ -14,3 +14,5 @@ Left click to place flowers (boosts fitness score by a small amount if touched)
 Right click flowers to remove them.
 
 Right click on goal (Big Flower) to drag [drag slowly].
+
+Escape to go back and exit.
